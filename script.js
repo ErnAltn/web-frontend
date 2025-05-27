@@ -70,44 +70,72 @@ function displayRandomQuote() {
     }
 }
 
-// Navbar scroll işlevselliği
-window.addEventListener('scroll', function() {
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-});
-
-// Mobil menü işlevselliği
-if (burger) {
-    burger.addEventListener('click', () => {
-        // Toggle nav
-        nav.classList.toggle('active');
-        
-        // Toggle burger animation
-        burger.classList.toggle('toggle');
-    });
-}
-
-// Dropdown işlevselliği (mobil için)
-dropdowns.forEach(dropdown => {
-    const dropdownLink = dropdown.querySelector('a');
-    
-    // Mobil görünümde dropdown menüler için
-    if (window.innerWidth <= 768) {
-        dropdownLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
+// Improved Mobile Menu and Dropdown Functionality
+const setupResponsiveNav = () => {
+    if (burger) {
+        burger.addEventListener('click', () => {
+            // Toggle nav
+            nav.classList.toggle('active');
+            
+            // Toggle burger animation
+            burger.classList.toggle('toggle');
+            
+            // Reset all dropdowns when closing the menu
+            if (!nav.classList.contains('active')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         });
     }
-});
+    
+    // Handle dropdowns better for all screen sizes
+    dropdowns.forEach(dropdown => {
+        const dropdownLink = dropdown.querySelector('a');
+        
+        // Handle mobile view differently
+        const handleDropdownClick = (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
+        };
+        
+        dropdownLink.addEventListener('click', handleDropdownClick);
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown') && window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Handle window resize to reset mobile menu if needed
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            burger.classList.remove('toggle');
+            
+            // Reset all dropdowns
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+};
 
 // Scroll durumunda navbar stil değişimini kontrol et
 const handleScroll = () => {
-    const navbar = document.querySelector('.navbar');
     const scrollThreshold = 50; // Kaydırma eşiği (piksel)
     
     window.addEventListener('scroll', () => {
@@ -117,24 +145,14 @@ const handleScroll = () => {
             navbar.classList.remove('scrolled');
         }
     });
-}
+};
 
 // Sayfa yüklendiğinde çalıştır
 const app = () => {
-    // Mobil menü işlevselliği
-    if (burger) {
-        burger.addEventListener('click', () => {
-            // Toggle nav
-            nav.classList.toggle('active');
-            
-            // Toggle burger animation
-            burger.classList.toggle('toggle');
-        });
-    }
-    
+    setupResponsiveNav();
     handleScroll();
     displayRandomQuote();
-}
+};
 
 // Uygulama başlangıcı
 document.addEventListener('DOMContentLoaded', () => {

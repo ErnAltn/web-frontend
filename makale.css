@@ -477,6 +477,10 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
+    
+    .makale-content {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -485,53 +489,89 @@ body {
     }
 
     .nav-links {
-        position: fixed;
+        position: absolute;
         right: 0;
-        top: 0;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        display: flex;
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        width: 100%;
         flex-direction: column;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
         align-items: center;
-        justify-content: space-around;
-        padding: 5rem 0;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+        height: auto;
+        padding: 1rem 0;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 999;
         gap: 0;
     }
-
-    .nav-links.active {
-        transform: translateX(0%);
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
     }
-
+    
+    .nav-links a {
+        color: #fff !important;
+        display: block;
+        padding: 0.8rem 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-links a:hover {
+        color: #fff !important;
+    }
+    
+    .nav-links a::after {
+        background-color: #fff;
+    }
+    
+    .nav-links a.active {
+        color: #fff !important;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+    }
+    
     .burger {
         display: block;
-        z-index: 1100;
     }
-
+    
     .burger.toggle .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
-
+    
     .burger.toggle .line2 {
         opacity: 0;
     }
-
+    
     .burger.toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-
+    
     .dropdown-content {
         position: static;
         transform: none;
-        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.5);
         width: 100%;
+        border-radius: 0;
+        box-shadow: none;
         display: none;
         padding: 0;
-        margin-top: 0.5rem;
     }
-
+    
+    .dropdown-content a {
+        color: #fff !important;
+    }
+    
     .dropdown.active .dropdown-content {
         display: block;
     }
@@ -565,6 +605,83 @@ body {
     
     .makale-content {
         padding: 1.5rem;
+    }
+    
+    .search-box {
+        width: 90%;
+        max-width: 540px;
+        margin: 2rem auto;
+    }
+    
+    .pagination {
+        margin: 2rem 0;
+    }
+
+    .nav-links .dropdown i {
+        color: #fff !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .makale-card {
+        max-width: 100%;
+    }
+    
+    .makale-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .makale-content {
+        padding: 1.2rem;
+    }
+    
+    .makale-category, .makale-date {
+        font-size: 0.8rem;
+    }
+    
+    .makale-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    .read-more {
+        font-size: 0.9rem;
+    }
+    
+    .page-banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .search-box {
+        width: 95%;
+        margin: 1.5rem auto;
+    }
+    
+    .search-box input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .search-box button {
+        width: 40px;
+    }
+    
+    .pagination a {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Add orientation-based styling for better mobile experience */
+@media screen and (max-height: 550px) and (orientation: landscape) {
+    .page-banner {
+        padding: 1.5rem 0;
+    }
+    
+    .nav-links.active {
+        max-height: 80vh;
+        overflow-y: auto;
     }
 }
 
@@ -638,4 +755,8 @@ footer p {
 
 footer:hover {
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-links .dropdown i {
+    color: #000;
 } 
