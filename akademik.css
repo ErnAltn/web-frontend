@@ -1,0 +1,351 @@
+.page-banner {
+    background: url('arkaplan2.webp');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner-title {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.academic-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 40px;
+}
+
+.academic-section {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.academic-section:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    color: #46A094;
+    font-size: 1.8em;
+    position: relative;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.section-header h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 25px;
+    background-color: #46A094;
+    border-radius: 3px;
+}
+
+.view-all {
+    color: #46A094;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-all:hover {
+    transform: translateX(5px);
+}
+
+/* Eğitimler Bölümü */
+.education-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.education-group {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.education-group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.education-group h3 {
+    color: #46A094;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.education-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.education-group ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.education-group ul li::before {
+    content: '•';
+    color: #46A094;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Bilimsel Çalışmalar Bölümü */
+.thesis-content {
+    padding: 0 20px;
+}
+
+.thesis-item {
+    border-left: 2px solid #f0f0f0;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.thesis-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid #46A094;
+    border-radius: 50%;
+    left: -9px;
+    top: 5px;
+}
+
+.thesis-item h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.thesis-details {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.thesis-details:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.thesis-title {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.thesis-title i {
+    color: #46A094;
+    font-size: 1.5em;
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.thesis-title p {
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.thesis-info {
+    padding-left: 35px;
+}
+
+.thesis-info p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.thesis-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Başarı Belgeleri Bölümü */
+.achievements-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item i {
+    color: #46A094;
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.achievement-details h3 {
+    font-size: 1.1em;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.achievement-details p {
+    margin: 0;
+    color: #666;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .education-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-banner {
+        height: 150px;
+        margin-top: 60px;
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .academic-container {
+        padding: 0 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+
+    .education-content,
+    .achievements-content {
+        grid-template-columns: 1fr;
+    }
+
+    .thesis-content {
+        padding: 0;
+    }
+
+    .thesis-item {
+        padding-left: 20px;
+    }
+
+    .thesis-title {
+        flex-direction: column;
+    }
+
+    .thesis-title i {
+        margin-bottom: 10px;
+    }
+
+    .thesis-info {
+        padding-left: 0;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.academic-section {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+#educations {
+    animation-delay: 0.2s;
+}
+
+#scientific {
+    animation-delay: 0.4s;
+}
+
+#achievements {
+    animation-delay: 0.6s;
+} 

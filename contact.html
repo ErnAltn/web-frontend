@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Kişisel Website</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><i class="fas fa-user-circle"></i> Logo</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="biyografi.html">Biyografi</a></li>
+            <li class="dropdown">
+                <a href="akademik.html">Akademik <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="egitimler.html">Eğitimler</a></li>
+                    <li><a href="bilimsel-calismalar.html">Bilimsel Çalışmalar</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Makaleler</a></li>
+            <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="contact-section">
+        <div class="contact-container">
+            <h2>İletişime Geçin</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h3>E-posta</h3>
+                        <p>info@example.com</p>
+                    </div>
+                </div>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="fullName" placeholder="Ad Soyad" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-posta" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Telefon Numarası" pattern="[0-9\s\(\)\-\+]+" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Konu" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="captcha">
+                            <span id="captchaText"></span>
+                            <button type="button" id="refreshCaptcha">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="captchaInput" name="captchaInput" placeholder="Güvenlik Kodu" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ~ Nesrin Demir ~ Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

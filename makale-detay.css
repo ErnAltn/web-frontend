@@ -1,0 +1,162 @@
+/* Makale detay sayfası stilleri */
+.makale-detay-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.makale-detay {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.makale-header {
+    margin-bottom: 2rem;
+}
+
+.makale-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.makale-date, .makale-category {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.makale-category {
+    background: #f0f0f0;
+    padding: 3px 12px;
+    border-radius: 15px;
+}
+
+.makale-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.makale-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.author-title {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.makale-image {
+    margin-bottom: 2rem;
+}
+
+.makale-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.makale-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.makale-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 2rem 0 1rem;
+}
+
+.makale-content p {
+    margin-bottom: 1.5rem;
+}
+
+.makale-content ul, .makale-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.makale-content li {
+    margin-bottom: 0.5rem;
+}
+
+.makale-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.makale-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    color: #46A094;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tag:hover {
+    color: #307c73;
+}
+
+.makale-share {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.makale-share span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.share-link {
+    color: #666;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.share-link:hover {
+    color: #46A094;
+}
+
+@media (max-width: 768px) {
+    .makale-detay-container {
+        padding: 0 20px;
+    }
+
+    .makale-title {
+        font-size: 2rem;
+    }
+
+    .makale-content {
+        font-size: 1rem;
+    }
+} 
